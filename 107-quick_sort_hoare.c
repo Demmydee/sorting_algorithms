@@ -48,7 +48,7 @@ int hoare_partit(int *array, size_t size, int left, int right)
 
 		if (above < below)
 		{
-			swap_ints(array + above, array + below);
+			swap_int(array + above, array + below);
 			print_array(array, size);
 		}
 	}
@@ -71,7 +71,7 @@ void hoare_sort(int *array, size_t size, int left, int right)
 
 	if (right - left > 0)
 	{
-		part = hoare_partition(array, size, left, right);
+		part = hoare_partit(array, size, left, right);
 		hoare_sort(array, size, left, part - 1);
 		hoare_sort(array, size, part, right);
 	}
